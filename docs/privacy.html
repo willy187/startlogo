@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StartLogo Privacy Policy</title>
+  <meta name="description" content="">
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="./"><img src="icon.png" width="36" height="36" alt=""><span>StartLogo</span></a>
+    <label class="lang"><span class="sr" data-i18n="langLabel"></span><select id="lang"></select></label>
+  </header>
+
+  <main class="wrap doc">
+    <h1 data-i18n="h1"></h1>
+    <p class="meta"><span data-i18n="updated"></span> <span id="date"></span></p>
+    <p id="intro"></p>
+    <div id="sections"></div>
+  </main>
+
+  <footer class="wrap">
+    <a href="./" data-i18n="home"></a>
+    <p data-i18n="disclaimer"></p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script>
+    /* Fill in your contact email (or a GitHub Issues URL) before publishing. */
+    var CONTACT = "";
+    var UPDATED = "2026-10-26";
+
+    var T = {
+      ko: {
+        title: "StartLogo 개인정보처리방침",
+        desc: "StartLogo 확장 프로그램의 개인정보처리방침. 어떤 데이터도 수집, 전송, 판매하지 않습니다.",
+        h1: "개인정보처리방침",
+        updated: "최종 수정일:",
+        intro: "StartLogo(이하 '확장 프로그램')는 구글 검색 첫 화면의 로고를 사용자가 정한 텍스트, 이미지 또는 시계로 바꿔 보여 줍니다.",
+        sections: [
+          ["수집하는 정보", "StartLogo는 개인정보나 이용 정보를 수집, 전송, 판매 또는 공유하지 않습니다. 계정, 분석 도구, 광고, 추적 기능이 없습니다."],
+          ["내 기기에 저장되는 정보", "설정(모드, 문구, 색상, 크기, 위치, 선택한 이미지)은 크롬의 <code>storage</code> 기능을 통해 사용자의 브라우저 안에만 저장됩니다. 이 정보는 기기 밖으로 나가지 않으며 개발자나 제3자가 접근할 수 없습니다. 확장 프로그램을 삭제하거나 확장 프로그램 데이터를 지우면 함께 삭제됩니다."],
+          ["웹사이트 접근", "확장 프로그램은 구글 검색 첫 화면(예: google.com 및 구글 국가별 사이트)에서만 실행됩니다. 화면에서 구글 로고를 찾아 사용자의 브라우저 안에서 모양만 바꿉니다. 검색어, 방문 기록 등 다른 페이지 내용을 읽거나 수집하거나 전송하지 않습니다."],
+          ["원격 코드와 제3자", "확장 프로그램은 원격 코드를 불러오거나 실행하지 않으며, 어떤 서버나 제3자 서비스로도 데이터를 보내지 않습니다."],
+          ["Google과의 관계", "StartLogo는 독립적으로 만든 확장 프로그램이며 Google LLC와 제휴, 후원, 보증 관계가 없습니다. Google은 Google LLC의 상표입니다."],
+          ["방침 변경", "방침이 바뀌면 이 주소에 새 날짜와 함께 게시합니다."],
+          ["문의", ""]
+        ],
+        todo: "문의 이메일을 입력하세요 (privacy.html의 CONTACT)"
+      },
+      en: {
+        title: "StartLogo Privacy Policy",
+        desc: "Privacy policy for the StartLogo extension. It does not collect, transmit or sell any data.",
+        h1: "Privacy Policy",
+        updated: "Last updated:",
+        intro: "StartLogo (\"the extension\") replaces the logo on the Google search home page with text, an image or a clock chosen by the user.",
+        sections: [
+          ["Data we collect", "StartLogo does not collect, transmit, sell or share any personal data or usage data. There are no accounts, no analytics, no advertising and no tracking."],
+          ["Data stored on your device", "Your settings (mode, text, colors, size, position and the image you choose) are saved only in your own browser using Chrome's <code>storage</code> API. This data never leaves your device and is not accessible to the developer or any third party. It is removed when you uninstall the extension or clear the extension's data."],
+          ["Website access", "The extension runs only on Google search home pages (for example google.com and Google country sites). It locates the Google logo on the page and replaces its appearance locally in your browser. It does not read, collect or transmit your searches, browsing history or any other page content."],
+          ["Remote code and third parties", "The extension does not load or run remote code and does not send data to any server or third-party service."],
+          ["Not affiliated with Google", "StartLogo is an independent extension and is not affiliated with, endorsed by, or sponsored by Google LLC. Google is a trademark of Google LLC."],
+          ["Changes to this policy", "If this policy changes, the updated version will be posted at this address with a new date."],
+          ["Contact", ""]
+        ],
+        todo: "Enter your contact email (CONTACT in privacy.html)"
+      },
+      ja: {
+        title: "StartLogo プライバシーポリシー",
+        desc: "StartLogo拡張機能のプライバシーポリシー。データの収集・送信・販売は一切行いません。",
+        h1: "プライバシーポリシー",
+        updated: "最終更新日：",
+        intro: "StartLogo（以下「本拡張機能」）は、Google検索トップページのロゴを、ユーザーが選んだテキスト・画像・時計に置き換えて表示します。",
+        sections: [
+          ["収集する情報", "StartLogoは、個人情報や利用状況に関する情報を収集・送信・販売・共有しません。アカウント、解析ツール、広告、トラッキングはありません。"],
+          ["お使いの端末に保存される情報", "設定（モード、文字、色、サイズ、位置、選択した画像）は、Chromeの <code>storage</code> 機能を使って、お使いのブラウザ内にのみ保存されます。この情報は端末の外に出ることはなく、開発者や第三者がアクセスすることはできません。拡張機能を削除するか、拡張機能のデータを消去すると一緒に削除されます。"],
+          ["ウェブサイトへのアクセス", "本拡張機能は、Google検索トップページ（例：google.com や各国のGoogleサイト）でのみ動作します。ページ上のGoogleロゴを探し、お使いのブラウザ内で見た目だけを変更します。検索キーワード、閲覧履歴、その他のページ内容を読み取ったり、収集したり、送信したりすることはありません。"],
+          ["リモートコードと第三者", "本拡張機能はリモートコードを読み込まず、実行もしません。また、いかなるサーバーや第三者サービスにもデータを送信しません。"],
+          ["Googleとの関係", "StartLogoは独立した拡張機能であり、Google LLCとは提携・後援・承認の関係にありません。GoogleはGoogle LLCの商標です。"],
+          ["ポリシーの変更", "ポリシーを変更した場合は、このアドレスに新しい日付とともに掲載します。"],
+          ["お問い合わせ", ""]
+        ],
+        todo: "連絡用メールアドレスを入力してください（privacy.html の CONTACT）"
+      },
+      "zh-CN": {
+        title: "StartLogo 隐私政策",
+        desc: "StartLogo 扩展程序的隐私政策。不会收集、传输或出售任何数据。",
+        h1: "隐私政策",
+        updated: "最后更新：",
+        intro: "StartLogo（以下简称“本扩展程序”）会把 Google 搜索首页的标志替换为用户选择的文字、图片或时钟。",
+        sections: [
+          ["我们收集的数据", "StartLogo 不会收集、传输、出售或共享任何个人数据或使用数据。没有账号，没有分析工具，没有广告，也没有跟踪。"],
+          ["保存在你设备上的数据", "你的设置（模式、文字、颜色、大小、位置和所选图片）通过 Chrome 的 <code>storage</code> 接口，仅保存在你自己的浏览器中。这些数据不会离开你的设备，开发者和任何第三方都无法访问。卸载扩展程序或清除扩展程序数据时会一并删除。"],
+          ["网站访问", "本扩展程序仅在 Google 搜索首页（例如 google.com 和各国家/地区的 Google 网站）上运行。它会在页面中找到 Google 标志，并只在你的浏览器本地改变其外观。它不会读取、收集或传输你的搜索内容、浏览记录或页面中的其他内容。"],
+          ["远程代码与第三方", "本扩展程序不会加载或运行远程代码，也不会向任何服务器或第三方服务发送数据。"],
+          ["与 Google 的关系", "StartLogo 是独立开发的扩展程序，与 Google LLC 没有关联，也未获其赞助或认可。Google 是 Google LLC 的商标。"],
+          ["政策变更", "如果本政策有变更，会在此地址发布新版本并更新日期。"],
+          ["联系方式", ""]
+        ],
+        todo: "请填写联系邮箱（privacy.html 中的 CONTACT）"
+      },
+      "zh-TW": {
+        title: "StartLogo 隱私權政策",
+        desc: "StartLogo 擴充功能的隱私權政策。不會蒐集、傳輸或販售任何資料。",
+        h1: "隱私權政策",
+        updated: "最後更新：",
+        intro: "StartLogo（以下簡稱「本擴充功能」）會把 Google 搜尋首頁的標誌換成使用者選擇的文字、圖片或時鐘。",
+        sections: [
+          ["我們蒐集的資料", "StartLogo 不會蒐集、傳輸、販售或分享任何個人資料或使用資料。沒有帳號，沒有分析工具，沒有廣告，也沒有追蹤。"],
+          ["儲存在你裝置上的資料", "你的設定（模式、文字、顏色、大小、位置和所選圖片）透過 Chrome 的 <code>storage</code> 介面，僅儲存在你自己的瀏覽器中。這些資料不會離開你的裝置，開發者與任何第三方都無法存取。解除安裝擴充功能或清除擴充功能資料時會一併刪除。"],
+          ["網站存取", "本擴充功能僅在 Google 搜尋首頁（例如 google.com 與各國家／地區的 Google 網站）上執行。它會在頁面中找到 Google 標誌，並只在你的瀏覽器本機改變其外觀。它不會讀取、蒐集或傳輸你的搜尋內容、瀏覽紀錄或頁面中的其他內容。"],
+          ["遠端程式碼與第三方", "本擴充功能不會載入或執行遠端程式碼，也不會向任何伺服器或第三方服務傳送資料。"],
+          ["與 Google 的關係", "StartLogo 是獨立開發的擴充功能，與 Google LLC 沒有關聯，也未獲其贊助或認可。Google 是 Google LLC 的商標。"],
+          ["政策變更", "如果本政策有變更，會在此網址發布新版本並更新日期。"],
+          ["聯絡方式", ""]
+        ],
+        todo: "請填寫聯絡信箱（privacy.html 中的 CONTACT）"
+      }
+    };
+
+    SL.start(T, function (lang, t) {
+      document.getElementById("date").textContent = UPDATED;
+      document.getElementById("intro").textContent = t("intro");
+      var box = document.getElementById("sections");
+      box.textContent = "";
+      var list = t("sections");
+      list.forEach(function (x, i) {
+        var sec = document.createElement("section");
+        var h = document.createElement("h2");
+        h.textContent = x[0];
+        var p = document.createElement("p");
+        if (i === list.length - 1) {
+          if (CONTACT) {
+            if (/^https?:\/\//.test(CONTACT)) {
+              var a = document.createElement("a");
+              a.href = CONTACT; a.textContent = CONTACT; p.appendChild(a);
+            } else {
+              var m = document.createElement("a");
+              m.href = "mailto:" + CONTACT; m.textContent = CONTACT; p.appendChild(m);
+            }
+          } else {
+            var td = document.createElement("span");
+            td.className = "todo";
+            td.textContent = t("todo");
+            p.appendChild(td);
+          }
+        } else {
+          p.innerHTML = x[1];
+        }
+        sec.appendChild(h);
+        sec.appendChild(p);
+        box.appendChild(sec);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "extName": { "message": "StartLogo - Custom Search Home Logo (CJK Ready)" },
+  "extDesc": { "message": "Replace the logo on the Google search home page with your own text (Korean, Japanese, Chinese, emoji), an image, or a live clock." },
+  "actionTitle": { "message": "StartLogo" },
+  "enabled": { "message": "On" },
+  "tabText": { "message": "Text" },
+  "tabImage": { "message": "Image" },
+  "tabClock": { "message": "Clock" },
+  "textPlaceholder": { "message": "e.g. Hello / 안녕하세요 / こんにちは / 你好" },
+  "textHint": { "message": "Korean, Japanese, Chinese and emoji all work" },
+  "imageHint": { "message": "Choose an image from your computer (recommended height ~115px)" },
+  "clockHint": { "message": "Replaces the logo with a live HH:MM:SS clock." },
+  "colorful": { "message": "Multicolor" },
+  "colorTitle": { "message": "Solid color (used when multicolor is off)" },
+  "size": { "message": "Size" },
+  "position": { "message": "Position" },
+  "imagePlaceholder": { "message": "(Choose an image in the popup)" },
+  "defaultText": { "message": "Hello" }
+}

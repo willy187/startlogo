@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StartLogo</title>
+  <meta name="description" content="">
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="./"><img src="icon.png" width="36" height="36" alt=""><span>StartLogo</span></a>
+    <label class="lang"><span class="sr" data-i18n="langLabel"></span><select id="lang"></select></label>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <h1 data-i18n="h1"></h1>
+      <p class="lead" data-i18n="sub"></p>
+      <p><a id="cta" class="btn" href="#"></a></p>
+    </section>
+
+    <section class="wrap" aria-label="demo">
+      <div class="sticker demo">
+        <img class="dog" src="icon.png" alt="">
+        <label class="sr" for="demo-input" data-i18n="demoLabel"></label>
+        <input id="demo-input" type="text" maxlength="30" autocomplete="off" data-i18n-ph="demoPlaceholder">
+        <div class="stage" id="stage" aria-live="polite"></div>
+        <div class="bar" aria-hidden="true"></div>
+        <p class="note" data-i18n="demoNote"></p>
+        <h2 class="chips-title" data-i18n="chipsTitle"></h2>
+        <div class="chips" id="chips"></div>
+        <p class="note" data-i18n="chipsNote"></p>
+      </div>
+    </section>
+
+    <section class="wrap block">
+      <h2 data-i18n="featuresTitle"></h2>
+      <ul class="rows" id="features"></ul>
+      <p class="after" data-i18n="featuresNote"></p>
+    </section>
+
+    <section class="wrap block">
+      <h2 data-i18n="stepsTitle"></h2>
+      <ol class="steps" id="steps"></ol>
+    </section>
+
+    <section class="wrap block">
+      <div class="sticker callout">
+        <h2 data-i18n="scopeTitle"></h2>
+        <ul id="scope"></ul>
+      </div>
+    </section>
+
+    <section class="wrap block">
+      <h2 data-i18n="faqTitle"></h2>
+      <div id="faq"></div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <a id="privacy-link" href="privacy.html" data-i18n="privacy"></a>
+    <p data-i18n="disclaimer"></p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script>
+    /* Set this to the Chrome Web Store listing URL after the extension is published. */
+    var STORE_URL = "";
+
+    var T = {
+      ko: {
+        title: "StartLogo - 한글·CJK 검색 홈 로고 변경",
+        desc: "구글 검색 첫 화면의 로고를 한글·일본어·중국어·이모지 텍스트, 내 이미지, 실시간 시계로 바꾸는 크롬 확장 프로그램.",
+        h1: "검색 첫 화면에\n내 글자를 걸어두세요",
+        sub: "한글, 일본어, 중국어, 이모지까지 깨지지 않는 크롬 확장 프로그램입니다. 이름, 좌우명, 사진, 시계로 로고를 바꿔 보세요.",
+        cta: "Chrome 웹 스토어에서 설치",
+        ctaSoon: "Chrome 웹 스토어 출시 준비 중",
+        demoLabel: "로고에 넣을 문구",
+        demoPlaceholder: "여기에 문구를 입력하세요",
+        demoDefault: "안녕하세요",
+        demoNote: "확장 프로그램을 설치하면 구글 검색 첫 화면에 이렇게 표시됩니다.",
+        chipsTitle: "이런 문구는 어때요?",
+        chips: ["사랑해 ♥ 하늘", "오늘도 한 걸음", "할 수 있다!"],
+        chipsNote: "연인·가족·반려동물의 이름, 나만의 좌우명, 올해의 목표나 응원 문구를 넣어 보세요.",
+        featuresTitle: "할 수 있는 것",
+        features: [
+          ["텍스트 로고", "원하는 문구를 입력하세요. 한글·일본어·중국어·이모지 등 2바이트 문자가 깨지지 않고 표시됩니다."],
+          ["이미지 로고", "내 컴퓨터의 이미지를 선택해 로고로 사용합니다."],
+          ["실시간 시계", "로고 대신 HH:MM:SS 시계를 표시합니다."]
+        ],
+        featuresNote: "익숙한 4색 글자 스타일이나 원하는 단색을 고르고, 크기와 위쪽·아래쪽 위치도 조절할 수 있습니다.",
+        stepsTitle: "사용 방법",
+        steps: [
+          "툴바의 StartLogo 아이콘을 클릭합니다.",
+          "텍스트, 이미지, 시계 중에서 선택해 설정합니다.",
+          "구글 검색 첫 화면을 열면 바로 적용되어 있습니다. '사용' 스위치를 끄면 언제든 원래 로고로 돌아갑니다."
+        ],
+        scopeTitle: "적용되는 곳",
+        scope: [
+          "구글 검색 첫 화면(google.com, google.co.kr 등 주요 구글 사이트)에서 로고가 바뀝니다.",
+          "크롬의 기본 새 탭 화면과 검색 결과 화면의 작은 로고는 바뀌지 않습니다. 새 탭 화면은 크롬이 직접 만든 화면이라 확장 프로그램이 수정할 수 없습니다.",
+          "설치 후 이미 열려 있던 구글 탭은 새로고침해야 적용됩니다."
+        ],
+        faqTitle: "자주 묻는 질문",
+        faq: [
+          ["새 탭 화면에서도 바뀌나요?", "아니요. 크롬의 기본 새 탭 화면은 확장 프로그램이 수정할 수 없습니다. 구글 검색 첫 화면(google.com 등)에서 적용됩니다."],
+          ["내 정보를 수집하나요?", "아니요. 어떤 데이터도 수집·전송·판매하지 않습니다. 설정과 선택한 이미지는 내 브라우저 안에만 저장됩니다."],
+          ["설치했는데 로고가 안 바뀌어요.", "이미 열려 있던 구글 탭을 새로고침해 보세요. 다른 구글 로고 변경 확장 프로그램이 켜져 있다면 서로 충돌할 수 있으니 하나만 켜 두세요."],
+          ["원래 로고로 되돌리려면?", "확장 프로그램 팝업 위쪽의 '사용' 스위치를 끄면 바로 원래 로고로 돌아갑니다."]
+        ]
+      },
+      en: {
+        title: "StartLogo - Custom Search Home Logo (CJK Ready)",
+        desc: "A Chrome extension that replaces the logo on the Google search home page with your own text (Korean, Japanese, Chinese, emoji), an image, or a live clock.",
+        h1: "Hang your own words\non the search home page",
+        sub: "A Chrome extension that handles Korean, Japanese, Chinese and emoji without breaking. Swap the logo for a name, a motto, a photo or a clock.",
+        cta: "Install from the Chrome Web Store",
+        ctaSoon: "Coming soon to the Chrome Web Store",
+        demoLabel: "Text for the logo",
+        demoPlaceholder: "Type your text here",
+        demoDefault: "Hello",
+        demoNote: "After installing, this is how it looks on the Google search home page.",
+        chipsTitle: "Ideas to try",
+        chips: ["I ♥ Hana", "One step at a time", "You've got this!"],
+        chipsNote: "A loved one's or pet's name, your personal motto, a goal or cheer for the year.",
+        featuresTitle: "What it does",
+        features: [
+          ["Text logo", "Type any text. Korean, Japanese, Chinese and emoji are fully supported (double-byte characters render correctly)."],
+          ["Image logo", "Pick any image from your computer and use it as your logo."],
+          ["Live clock", "Show a real-time HH:MM:SS clock instead of the logo."]
+        ],
+        featuresNote: "Choose multicolor letters in the familiar four-color style or a single color, and adjust size and vertical position.",
+        stepsTitle: "How to use",
+        steps: [
+          "Click the StartLogo icon in the toolbar.",
+          "Choose Text, Image or Clock and set it up.",
+          "Open the Google search home page and your logo is already there. Turn the On switch off any time to restore the original."
+        ],
+        scopeTitle: "Where it works",
+        scope: [
+          "It changes the logo on the Google search home page (google.com, google.co.kr and other major Google sites).",
+          "It does not change Chrome's built-in New Tab page or the small logo on search result pages. The New Tab page is built by Chrome itself, so extensions cannot modify it.",
+          "After installing, reload any Google tabs that were already open."
+        ],
+        faqTitle: "Questions",
+        faq: [
+          ["Does it work on the New Tab page?", "No. Chrome's built-in New Tab page cannot be modified by extensions. It works on the Google search home page (google.com and other major Google sites)."],
+          ["Does it collect my data?", "No. It does not collect, transmit or sell any data. Your settings and chosen image stay in your own browser."],
+          ["I installed it but the logo did not change.", "Reload the Google tabs that were already open. If another extension that changes the Google logo is on, they can conflict, so keep only one turned on."],
+          ["How do I get the original logo back?", "Turn off the On switch at the top of the extension popup and the original logo returns right away."]
+        ]
+      },
+      ja: {
+        title: "StartLogo - 検索ホームのロゴ変更（日本語・CJK対応）",
+        desc: "Google検索トップページのロゴを、日本語・韓国語・中国語・絵文字のテキスト、好きな画像、リアルタイム時計に変更するChrome拡張機能。",
+        h1: "検索トップに\n自分の言葉を掲げよう",
+        sub: "日本語・韓国語・中国語・絵文字も崩れずに表示できるChrome拡張機能です。名前、座右の銘、写真、時計にロゴを変えてみましょう。",
+        cta: "Chromeウェブストアでインストール",
+        ctaSoon: "Chromeウェブストアで公開準備中",
+        demoLabel: "ロゴにする文字",
+        demoPlaceholder: "ここに文字を入力",
+        demoDefault: "こんにちは",
+        demoNote: "インストールすると、Google検索トップページではこのように表示されます。",
+        chipsTitle: "こんな使い方はいかが？",
+        chips: ["大好き ♥ はるか", "一歩ずつ", "きっとできる！"],
+        chipsNote: "大切な人やペットの名前、座右の銘、今年の目標や応援メッセージを入れてみてください。",
+        featuresTitle: "できること",
+        features: [
+          ["テキストロゴ", "好きな文字を入力できます。日本語・韓国語・中国語・絵文字などの全角（2バイト）文字も崩れずに表示されます。"],
+          ["画像ロゴ", "パソコン内の画像を選んでロゴにできます。"],
+          ["リアルタイム時計", "ロゴの代わりにHH:MM:SS形式の時計を表示します。"]
+        ],
+        featuresNote: "おなじみの4色スタイルか好きな単色を選べて、サイズと上下の位置も調整できます。",
+        stepsTitle: "使い方",
+        steps: [
+          "ツールバーのStartLogoアイコンをクリックします。",
+          "テキスト・画像・時計から選んで設定します。",
+          "Google検索トップページを開くとすぐに反映されます。「有効」スイッチをオフにすればいつでも元のロゴに戻せます。"
+        ],
+        scopeTitle: "対応範囲",
+        scope: [
+          "Google検索トップページ（google.com、google.co.jpなど主要なGoogleサイト）のロゴが変わります。",
+          "Chromeの標準の新しいタブページや、検索結果ページの小さなロゴは変更されません。新しいタブページはChrome自体が作成しているため、拡張機能では変更できません。",
+          "インストール後は、すでに開いているGoogleのタブを再読み込みしてください。"
+        ],
+        faqTitle: "よくある質問",
+        faq: [
+          ["新しいタブページでも変わりますか？", "いいえ。Chromeの標準の新しいタブページは拡張機能では変更できません。Google検索トップページ（google.comなど）で反映されます。"],
+          ["個人情報を収集しますか？", "いいえ。データの収集・送信・販売は一切行いません。設定や選択した画像はお使いのブラウザ内にのみ保存されます。"],
+          ["インストールしたのにロゴが変わりません。", "すでに開いているGoogleのタブを再読み込みしてください。Googleのロゴを変更する別の拡張機能が有効な場合は競合することがあるため、どちらか一つだけをオンにしてください。"],
+          ["元のロゴに戻すには？", "拡張機能ポップアップ上部の「有効」スイッチをオフにすると、すぐに元のロゴに戻ります。"]
+        ]
+      },
+      "zh-CN": {
+        title: "StartLogo - 自定义搜索首页标志（支持中日韩文字）",
+        desc: "一款 Chrome 扩展程序，可将 Google 搜索首页的标志替换为你自己的文字（中文、日文、韩文、表情符号）、图片或实时时钟。",
+        h1: "把你的文字\n挂在搜索首页上",
+        sub: "中文、日文、韩文和表情符号都能正常显示的 Chrome 扩展程序。把标志换成名字、座右铭、照片或时钟。",
+        cta: "在 Chrome 应用商店安装",
+        ctaSoon: "即将上架 Chrome 应用商店",
+        demoLabel: "标志上的文字",
+        demoPlaceholder: "在这里输入文字",
+        demoDefault: "你好",
+        demoNote: "安装后，Google 搜索首页上就会这样显示。",
+        chipsTitle: "试试这些创意",
+        chips: ["爱你 ♥ 小雨", "一步一个脚印", "你可以的！"],
+        chipsNote: "爱人、家人或宠物的名字，座右铭，今年的目标或加油语。",
+        featuresTitle: "能做什么",
+        features: [
+          ["文字标志", "输入任意文字。中文、日文、韩文、表情符号等双字节字符都能正常显示。"],
+          ["图片标志", "选择电脑中的图片作为标志。"],
+          ["实时时钟", "用 HH:MM:SS 时钟代替标志。"]
+        ],
+        featuresNote: "可选熟悉的四色字母风格或单一颜色，并调整大小和上下位置。",
+        stepsTitle: "使用方法",
+        steps: [
+          "点击工具栏中的 StartLogo 图标。",
+          "在文字、图片、时钟中选择并设置。",
+          "打开 Google 搜索首页即可看到效果。随时关闭「启用」开关即可恢复原标志。"
+        ],
+        scopeTitle: "适用范围",
+        scope: [
+          "会更改 Google 搜索首页（google.com、google.com.hk 等主要 Google 网站）的标志。",
+          "不会更改 Chrome 自带的新标签页，也不会更改搜索结果页中的小标志。新标签页由 Chrome 自身提供，扩展程序无法修改。",
+          "安装后，请刷新已经打开的 Google 标签页。"
+        ],
+        faqTitle: "常见问题",
+        faq: [
+          ["新标签页也会改变吗？", "不会。Chrome 自带的新标签页无法由扩展程序修改。它只在 Google 搜索首页（google.com 等主要 Google 网站）生效。"],
+          ["会收集我的数据吗？", "不会。不会收集、传输或出售任何数据。设置和所选图片只保存在你自己的浏览器中。"],
+          ["安装后标志没有变化。", "请刷新已经打开的 Google 标签页。如果同时启用了另一个更改 Google 标志的扩展程序，可能会冲突，请只保留一个。"],
+          ["如何恢复原来的标志？", "关闭扩展程序弹出窗口顶部的「启用」开关，即可立即恢复原标志。"]
+        ]
+      },
+      "zh-TW": {
+        title: "StartLogo - 自訂搜尋首頁標誌（支援中日韓文字）",
+        desc: "一款 Chrome 擴充功能，可將 Google 搜尋首頁的標誌換成你自己的文字（中文、日文、韓文、表情符號）、圖片或即時時鐘。",
+        h1: "把你的文字\n掛在搜尋首頁上",
+        sub: "中文、日文、韓文和表情符號都能正常顯示的 Chrome 擴充功能。把標誌換成名字、座右銘、照片或時鐘。",
+        cta: "在 Chrome 線上應用程式商店安裝",
+        ctaSoon: "即將上架 Chrome 線上應用程式商店",
+        demoLabel: "標誌上的文字",
+        demoPlaceholder: "在這裡輸入文字",
+        demoDefault: "你好",
+        demoNote: "安裝後，Google 搜尋首頁上就會這樣顯示。",
+        chipsTitle: "試試這些點子",
+        chips: ["愛你 ♥ 小雨", "一步一腳印", "你可以的！"],
+        chipsNote: "愛人、家人或寵物的名字，座右銘，今年的目標或加油話。",
+        featuresTitle: "能做什麼",
+        features: [
+          ["文字標誌", "輸入任意文字。中文、日文、韓文、表情符號等雙位元組字元都能正常顯示。"],
+          ["圖片標誌", "選擇電腦中的圖片作為標誌。"],
+          ["即時時鐘", "以 HH:MM:SS 時鐘取代標誌。"]
+        ],
+        featuresNote: "可選熟悉的四色字母風格或單一顏色，並調整大小與上下位置。",
+        stepsTitle: "使用方式",
+        steps: [
+          "點擊工具列中的 StartLogo 圖示。",
+          "在文字、圖片、時鐘中選擇並設定。",
+          "開啟 Google 搜尋首頁即可看到效果。隨時關閉「啟用」開關即可恢復原標誌。"
+        ],
+        scopeTitle: "適用範圍",
+        scope: [
+          "會變更 Google 搜尋首頁（google.com、google.com.tw 等主要 Google 網站）的標誌。",
+          "不會變更 Chrome 內建的新分頁，也不會變更搜尋結果頁中的小標誌。新分頁由 Chrome 本身提供，擴充功能無法修改。",
+          "安裝後，請重新整理已經開啟的 Google 分頁。"
+        ],
+        faqTitle: "常見問題",
+        faq: [
+          ["新分頁也會改變嗎？", "不會。Chrome 內建的新分頁無法由擴充功能修改。它只在 Google 搜尋首頁（google.com 等主要 Google 網站）生效。"],
+          ["會蒐集我的資料嗎？", "不會。不會蒐集、傳輸或販售任何資料。設定與所選圖片只儲存在你自己的瀏覽器中。"],
+          ["安裝後標誌沒有改變。", "請重新整理已經開啟的 Google 分頁。如果同時啟用了另一個更改 Google 標誌的擴充功能，可能會衝突，請只保留一個。"],
+          ["如何恢復原本的標誌？", "關閉擴充功能彈出視窗頂部的「啟用」開關，即可立即恢復原標誌。"]
+        ]
+      }
+    };
+
+    var GLYPHS = [
+      '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5v22M10 5h12M10 27h12"/></svg>',
+      '<svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="6" width="24" height="20" rx="4"/><path d="M7 22l6-7 4 5 3-3 5 5"/><circle cx="22" cy="12" r="2"/></svg>',
+      '<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M16 9v7l5 3"/></svg>'
+    ];
+    var COLORS = ["#4285F4", "#EA4335", "#FBBC05", "#4285F4", "#34A853", "#EA4335"];
+
+    var input = document.getElementById("demo-input");
+    var stage = document.getElementById("stage");
+    var touched = false;
+
+    function chars(s) {
+      if (window.Intl && Intl.Segmenter) {
+        return Array.from(new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(s), function (x) { return x.segment; });
+      }
+      return Array.from(s);
+    }
+    function units(list) {
+      var u = 0;
+      list.forEach(function (c) {
+        u += /[ᄀ-ᇿ぀-ヿ㄰-㆏㐀-鿿가-힯＀-￯]/.test(c) ? 1 : 0.6;
+      });
+      return Math.max(u, 1);
+    }
+    function drawLogo() {
+      var list = chars(input.value);
+      stage.textContent = "";
+      var w = Math.max(stage.clientWidth - 24, 160);
+      stage.style.fontSize = Math.min(72, w / units(list)) + "px";
+      var i = 0;
+      list.forEach(function (c) {
+        var s = document.createElement("span");
+        s.textContent = c;
+        if (/\s/.test(c)) { s.style.whiteSpace = "pre"; }
+        else { s.style.color = COLORS[i++ % COLORS.length]; }
+        stage.appendChild(s);
+      });
+    }
+
+    input.addEventListener("input", function () { touched = true; drawLogo(); });
+    window.addEventListener("resize", drawLogo);
+
+    function el(tag, text, cls) {
+      var e = document.createElement(tag);
+      if (text !== undefined) e.textContent = text;
+      if (cls) e.className = cls;
+      return e;
+    }
+
+    SL.start(T, function (lang, t) {
+      if (!touched) input.value = t("demoDefault");
+      drawLogo();
+
+      var cta = document.getElementById("cta");
+      if (STORE_URL) {
+        cta.href = STORE_URL;
+        cta.textContent = t("cta");
+        cta.classList.remove("off");
+        cta.removeAttribute("aria-disabled");
+      } else {
+        cta.removeAttribute("href");
+        cta.textContent = t("ctaSoon");
+        cta.classList.add("off");
+        cta.setAttribute("aria-disabled", "true");
+      }
+
+      var chips = document.getElementById("chips");
+      chips.textContent = "";
+      t("chips").forEach(function (c) {
+        var b = el("button", c, "chip");
+        b.type = "button";
+        b.addEventListener("click", function () { touched = true; input.value = c; drawLogo(); });
+        chips.appendChild(b);
+      });
+
+      var f = document.getElementById("features");
+      f.textContent = "";
+      t("features").forEach(function (x, i) {
+        var li = document.createElement("li");
+        var g = el("div", undefined, "glyph");
+        g.innerHTML = GLYPHS[i];
+        var body = document.createElement("div");
+        body.appendChild(el("h3", x[0]));
+        body.appendChild(el("p", x[1]));
+        li.appendChild(g);
+        li.appendChild(body);
+        f.appendChild(li);
+      });
+
+      var s = document.getElementById("steps");
+      s.textContent = "";
+      t("steps").forEach(function (x) { s.appendChild(el("li", x)); });
+
+      var sc = document.getElementById("scope");
+      sc.textContent = "";
+      t("scope").forEach(function (x) { sc.appendChild(el("li", x)); });
+
+      var q = document.getElementById("faq");
+      q.textContent = "";
+      t("faq").forEach(function (x) {
+        var d = document.createElement("details");
+        d.appendChild(el("summary", x[0]));
+        d.appendChild(el("p", x[1]));
+        q.appendChild(d);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "extName": { "message": "StartLogo - 検索ホームのロゴ変更（日本語・CJK対応）" },
+  "extDesc": { "message": "Google検索トップページのロゴを、日本語・韓国語・中国語・絵文字のテキスト、好きな画像、リアルタイム時計に変更します。" },
+  "actionTitle": { "message": "StartLogo" },
+  "enabled": { "message": "有効" },
+  "tabText": { "message": "テキスト" },
+  "tabImage": { "message": "画像" },
+  "tabClock": { "message": "時計" },
+  "textPlaceholder": { "message": "例）こんにちは / 안녕하세요 / 你好" },
+  "textHint": { "message": "日本語・韓国語・中国語・絵文字に対応" },
+  "imageHint": { "message": "パソコン内の画像を選択（推奨の高さ 約115px）" },
+  "clockHint": { "message": "ロゴをリアルタイムのHH:MM:SS時計に置き換えます。" },
+  "colorful": { "message": "マルチカラー" },
+  "colorTitle": { "message": "単色を選択（マルチカラーをオフにすると適用）" },
+  "size": { "message": "サイズ" },
+  "position": { "message": "位置" },
+  "imagePlaceholder": { "message": "（ポップアップで画像を選択してください）" },
+  "defaultText": { "message": "こんにちは" }
+}

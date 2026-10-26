@@ -1,0 +1,19 @@
+{
+  "extName": { "message": "StartLogo - 한글·CJK 검색 홈 로고 변경" },
+  "extDesc": { "message": "구글 검색 첫 화면의 로고를 한글·일본어·중국어·이모지 텍스트, 내 이미지, 실시간 시계로 바꿉니다. 2바이트 문자 지원." },
+  "actionTitle": { "message": "StartLogo" },
+  "enabled": { "message": "사용" },
+  "tabText": { "message": "텍스트" },
+  "tabImage": { "message": "이미지" },
+  "tabClock": { "message": "시계" },
+  "textPlaceholder": { "message": "예) 안녕하세요 / こんにちは / 你好" },
+  "textHint": { "message": "한글·일본어·중국어·이모지 모두 가능" },
+  "imageHint": { "message": "내 컴퓨터의 이미지를 선택하세요 (권장 높이 약 115px)" },
+  "clockHint": { "message": "로고를 실시간 HH:MM:SS 시계로 바꿉니다." },
+  "colorful": { "message": "구글 색상" },
+  "colorTitle": { "message": "단색 선택 (다색을 끄면 적용)" },
+  "size": { "message": "크기" },
+  "position": { "message": "위치" },
+  "imagePlaceholder": { "message": "(팝업에서 이미지를 선택하세요)" },
+  "defaultText": { "message": "안녕하세요" }
+}

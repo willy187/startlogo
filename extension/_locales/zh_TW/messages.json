@@ -1,0 +1,19 @@
+{
+  "extName": { "message": "StartLogo - 自訂搜尋首頁標誌（支援中日韓文字）" },
+  "extDesc": { "message": "將 Google 搜尋首頁的標誌換成你自己的文字（中文、日文、韓文、表情符號）、圖片或即時時鐘。" },
+  "actionTitle": { "message": "StartLogo" },
+  "enabled": { "message": "啟用" },
+  "tabText": { "message": "文字" },
+  "tabImage": { "message": "圖片" },
+  "tabClock": { "message": "時鐘" },
+  "textPlaceholder": { "message": "例如：你好 / 안녕하세요 / こんにちは" },
+  "textHint": { "message": "支援中文、日文、韓文和表情符號" },
+  "imageHint": { "message": "選擇電腦中的圖片（建議高度約 115px）" },
+  "clockHint": { "message": "以即時 HH:MM:SS 時鐘取代標誌。" },
+  "colorful": { "message": "多彩" },
+  "colorTitle": { "message": "單一顏色（關閉多彩後生效）" },
+  "size": { "message": "大小" },
+  "position": { "message": "位置" },
+  "imagePlaceholder": { "message": "（請在彈出視窗中選擇圖片）" },
+  "defaultText": { "message": "你好" }
+}

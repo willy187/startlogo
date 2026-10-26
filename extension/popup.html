@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body { width: 320px; margin: 0; padding: 14px; font-family: "Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Hiragino Sans","Yu Gothic","PingFang SC","Microsoft YaHei",sans-serif; font-size: 13px; color: #202124; }
+    h1 { font-size: 16px; margin: 0 0 10px; display: flex; justify-content: space-between; align-items: center; }
+    .tabs { display: flex; gap: 4px; margin-bottom: 10px; }
+    .tabs label { flex: 1; text-align: center; padding: 6px 0; border: 1px solid #dadce0; border-radius: 6px; cursor: pointer; }
+    .tabs input { display: none; }
+    .tabs input:checked + span { font-weight: 700; color: #1a73e8; }
+    .tabs label:has(input:checked) { background: #e8f0fe; border-color: #1a73e8; }
+    .panel { display: none; margin-bottom: 10px; }
+    .panel.active { display: block; }
+    input[type="text"] { width: 100%; box-sizing: border-box; padding: 8px; font-size: 15px; border: 1px solid #dadce0; border-radius: 6px; }
+    .row { display: flex; align-items: center; justify-content: space-between; margin: 8px 0; gap: 8px; }
+    .row input[type="range"] { flex: 1; }
+    .hint { color: #5f6368; font-size: 11px; margin-top: 4px; }
+    #preview { max-width: 100%; max-height: 60px; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <h1>StartLogo <label><input type="checkbox" id="enabled" /> <span data-i18n="enabled"></span></label></h1>
+
+  <div class="tabs">
+    <label><input type="radio" name="mode" value="text" /><span data-i18n="tabText"></span></label>
+    <label><input type="radio" name="mode" value="image" /><span data-i18n="tabImage"></span></label>
+    <label><input type="radio" name="mode" value="clock" /><span data-i18n="tabClock"></span></label>
+  </div>
+
+  <div class="panel" data-panel="text">
+    <input type="text" id="text" data-i18n-placeholder="textPlaceholder" />
+    <div class="hint" data-i18n="textHint"></div>
+  </div>
+
+  <div class="panel" data-panel="image">
+    <input type="file" id="file" accept="image/*" />
+    <img id="preview" alt="" />
+    <div class="hint" data-i18n="imageHint"></div>
+  </div>
+
+  <div class="panel" data-panel="clock">
+    <div class="hint" data-i18n="clockHint"></div>
+  </div>
+
+  <div class="row">
+    <label><input type="checkbox" id="colorful" /> <span data-i18n="colorful"></span></label>
+    <input type="color" id="color" data-i18n-title="colorTitle" />
+  </div>
+  <div class="row"><span data-i18n="size"></span><input type="range" id="size" min="40" max="200" /></div>
+  <div class="row"><span data-i18n="position"></span><input type="range" id="offsetY" min="-80" max="80" /></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
